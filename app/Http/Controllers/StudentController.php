@@ -22,6 +22,13 @@ class StudentController extends Controller
             ->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
+    public function search(Request $request)
+    {
+        $keyword = $request->search;
+        $students= student::where('nama', 'like', "%" . $keyword . "%")->paginate(5);
+        return view('students.index', compact('students'))->with('i', (request()->input('page', 1) - 1) * 5);
+    }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -31,7 +38,7 @@ class StudentController extends Controller
     {
         $rayons = Rayon::all(); 
         $studentGroups = StudentGroup::all();
-        return view('students.create',compact('rayons','studentGroups', $rayons, $studentGroups));
+        return view('students.create',compact('rayons','studentGroups'));
 
     }
 

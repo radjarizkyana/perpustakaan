@@ -9,5 +9,5 @@ class Borrowing extends Model
 {
     use HasFactory;
     protected $table = 'borrowings';
-    protected $fillable = ['nama_peminjam', 'judul_buku', 'tgl_peminjam', 'tgl_kembali', 'ket'];
+    protected $fillable = ['nama_peminjam', 'judul_buku', 'tgl_pinjam', 'tgl_kembali', 'ket'];
 }

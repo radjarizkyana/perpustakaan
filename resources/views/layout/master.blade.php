@@ -38,7 +38,7 @@
 
       <!-- Nav Item - Dashboard -->
       <li class="nav-item active">
-        <a class="nav-link" href="#">
+        <a class="nav-link" href="dashboard">
           <i class="fas fa-fw fa-tachometer-alt"></i>
           <span>Dashboard</span></a>
       </li>
@@ -64,6 +64,7 @@
             <a class="collapse-item" href="{{ url('students') }}">Data Siswa</a>
             <a class="collapse-item" href="{{ url('rayons') }}">Data Rayon</a>
             <a class="collapse-item" href="{{ url('studentGroups') }}">Data Rombel</a>
+            <a class="collapse-item" href="{{ url('borrowings') }}">Data Peminjaman</a>
 
           </div>
         </div>
@@ -79,14 +80,14 @@
 
        <!-- Nav Item - Register -->
        <li class="nav-item">
-        <a class="nav-link" href="tables.html">
+        <a class="nav-link" href="/register">
           <i class="fas fa-fw fa-table"></i>
           <span>Register</span></a>
       </li>
 
       <!-- Nav Item - Login -->
       <li class="nav-item">
-        <a class="nav-link" href="charts.html">
+        <a class="nav-link" href="login">
           <i class="fas fa-fw fa-chart-area"></i>
           <span>Logout</span></a>
       </li>
