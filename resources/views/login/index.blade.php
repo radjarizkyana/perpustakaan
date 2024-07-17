@@ -10,7 +10,7 @@
                 @endif
                 <div class="container">
                     <main class="form-login">
-                        <form action="/login" method="POST">
+                        <form action="/dashboard" method="POST">
                             @csrf
                             <h1 class="h3 mb-3 fw-normal">Login</h1>
                             <div class="form-floating">

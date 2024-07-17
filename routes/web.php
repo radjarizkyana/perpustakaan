@@ -22,10 +22,10 @@ use App\Http\Controllers\LoginController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('register.index');
 });
-Route::get('dashboard', function () {
-    return view('dashboard');
+Route::post('dashboard', function () {
+    return view('dashboard.index');
 });
 
 Route::post('/logout', [AuthenticatedSessionController::class, 'destroy'])
@@ -39,8 +39,8 @@ Route::resource('books', BookController::class);
 Route::resource('borrowings', BorrowingController::class);
 
 Route::get('/register', [RegisterController::class, 'index']);
-Route::get('/search', [StudentController::class, 'search'])->name('search');
-Route::get('/search', [BookController::class, 'search'])->name('search');
+Route::get('/searchstudent', [StudentController::class, 'search'])->name('searchstudent');
+Route::get('/searchbook', [BookController::class, 'search'])->name('searchbook');
 
 
 // route untuk memberikan function store dari RegisterController kepada /register yang mana methodnya POST
@@ -48,6 +48,3 @@ Route::post('/register', [RegisterController::class, 'store']);
 
 Route::get('/login', [LoginController::class, 'index']);
 Route::post('/login', [LoginController::class, 'authanticate']);
-
-// route untuk memberikan function store dari RegisterController kepada /register yang mana methodnya POST
-Route::post('/register', [RegisterController::class, 'store']);

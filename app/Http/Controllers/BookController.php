@@ -21,6 +21,13 @@ class BookController extends Controller
         ->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
+    public function search(Request $request)
+    {
+        $keyword = $request->search;
+        $books= book::where('judul', 'like', "%" . $keyword . "%")->paginate(5);
+        return view('books.index', compact('books'))->with('i', (request()->input('page', 1) - 1) * 5);
+    }
+    
     /**
      * Show the form for creating a new resource.
      *
